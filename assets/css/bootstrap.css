@@ -1,0 +1,174 @@
+/* col < 576 <= col-sm < 768 <= col-md < 992 <= col-lg < 1200 <= xl < 1400 <= xxl */
+
+.container,
+.container-fluid {
+    --bs-gutter-x: 0;
+}
+
+ul {
+    flex-direction: initial;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* col-sm */
+@media (min-width: 576px) {
+    .row-sm-cols-3>* {
+        flex: 0 0 auto;
+        width: 33.3333333333%;
+    }
+}
+
+/* col-md */
+@media (min-width: 768px) {
+
+    .offset-md-0-5 {
+        margin-left: 4.166666667%;
+    }
+
+    .offset-md-0-25 {
+        margin-left: 2.083333333%;
+    }
+
+    .col-md-0-5 {
+        flex: 0 0 auto;
+        width: 4.16666666%;
+    }
+
+    .col-md-0-75 {
+        flex: 0 0 auto;
+        width: 6.25%;
+    }
+
+    .col-md-1-5 {
+        flex: 0 0 auto;
+        width: 12.5%;
+    }
+
+    .col-md-1-75 {
+        flex: 0 0 auto;
+        width: 14.58333333%;
+    }
+
+    .row-md-cols-4>* {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+
+}
+
+/* col-lg */
+@media (min-width: 992px) {
+
+    .offset-lg-0 {
+        margin-left: 0 !important;
+    }
+
+    .offset-lg-0-5 {
+        margin-left: 4.166666667%;
+    }
+
+    .offset-lg-0-25 {
+        margin-left: 2.083333333%;
+    }
+
+    .col-lg-1-5 {
+        flex: 0 0 auto;
+        width: 12.5%;
+    }
+
+    .col-lg-1-75 {
+        flex: 0 0 auto;
+        width: 14.58333333%;
+    }
+
+    .row-lg-cols-4>* {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+    .row-lg-cols-3>* {
+        flex: 0 0 auto;
+        width: 33.3333333333%;
+    }
+
+}
+
+/* col-xl */
+@media (min-width: 1200px) {
+
+    .offset-xl-0-5 {
+        margin-left: 4.166666667%;
+    }
+
+    .offset-xl-0-25 {
+        margin-left: 2.083333333%;
+    }
+
+    .col-xl-1-5 {
+        flex: 0 0 auto;
+        width: 12.5%;
+    }
+
+    .col-xl-1-75 {
+        flex: 0 0 auto;
+        width: 14.58333333%;
+    }
+
+    .col-xl-2-5 {
+        flex: 0 0 auto;
+        width: 20.83333333%;
+    }
+
+    .col-xl-4-5 {
+        flex: 0 0 auto;
+        width: 37.5%;
+    }
+
+    .row-xl-cols-5>* {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+
+}
+
+/* only col */
+@media (max-width: 575px) {
+
+    .m--0 {
+        margin: 0;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .col-1-5 {
+        flex: 0 0 auto;
+        width: 12.5%;
+    }
+
+    .col-1-75 {
+        flex: 0 0 auto;
+        width: 14.58333333%;
+    }
+
+    .offset-0-5 {
+        margin-left: 4.166666667%;
+    }
+
+    .offset-0-25 {
+        margin-left: 2.083333333%;
+    }
+}
+
+/* only md */
+@media (min-width: 768px) and (max-width: 991px) {
+    .justify-md-center {
+        justify-content: center;
+    }
+
+}
