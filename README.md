@@ -10,4 +10,4 @@ Nếu bạn muốn trải nghiệm Trifarm ngay hôm nay, bạn có thể truy c
 
 [![img](https://i.imgur.com/SiGmNUt.png)](https://trifarm.x10.mx/)
 
-`<img src="https://i.imgur.com/SiGmNUt.png" alt="Viblo logo">`
+<img src="https://i.imgur.com/SiGmNUt.png" alt="Viblo logo">
