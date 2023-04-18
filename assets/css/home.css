@@ -109,7 +109,11 @@
 
 .product__rating-yellow {
     --star-percent: 100%;
-    background: linear-gradient(90deg, var(--star-yellow-color) var(--star-percent), rgb(213, 213, 213) var(--star-percent));
+    background: linear-gradient(
+        90deg,
+        var(--star-yellow-color) var(--star-percent),
+        rgb(213, 213, 213) var(--star-percent)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -163,7 +167,6 @@
 
 /* =============================== news =============================== */
 
-
 .news {
     display: flex;
     align-items: center;
@@ -213,7 +216,6 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-
 }
 
 /* =============================== hotsale =============================== */
@@ -241,7 +243,7 @@
     border-radius: 8px;
     font-size: 1.6rem;
     background-color: rgb(255, 91, 102);
-    color: white
+    color: white;
 }
 
 .card__flashsale .product__sold {
@@ -279,7 +281,6 @@
     background-color: rgb(255, 170, 175);
     width: 100%;
     border-radius: 11px;
-
 }
 
 .card__flashsale .product__sold--text {
@@ -302,14 +303,18 @@
 /* =============================================== banner =============================================== */
 
 .banner {
-    background: linear-gradient(180deg, var(--primary-light-color) 50%, rgba(255, 255, 255, 0) 50%);
+    background: linear-gradient(
+        180deg,
+        var(--primary-light-color) 50%,
+        rgba(255, 255, 255, 0) 50%
+    );
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 
     position: relative;
     display: flex;
-    margin-bottom: 24px
+    margin-bottom: 24px;
 }
 
 .banner__content {
@@ -331,7 +336,6 @@
 
     width: 24%;
     object-fit: contain;
-
 }
 
 .banner_bg-img-left {
@@ -365,9 +369,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 12%;
+    width: 14%;
     object-fit: contain;
-    padding: 4px 12px 4px 12px;
+    padding: 4px 10px 4px 8px;
     background: rgba(255, 255, 255, 0.75);
     border-bottom-right-radius: 8px;
     box-shadow: 1px 1px 0.7rem rgba(0, 0, 0, 0.1);
@@ -386,7 +390,6 @@
     border-bottom-left-radius: 8px;
     overflow: hidden;
     padding: 16px;
-
 }
 
 .item-banner {
@@ -421,7 +424,6 @@
 }
 
 @media (max-width: 991px) {
-
     .banner_bg-img-left,
     .banner_bg-img-right {
         display: none;
@@ -469,7 +471,6 @@
     .flashsale__col {
         margin-top: 12px;
     }
-
 }
 
 @media (max-width: 410px) {
@@ -480,5 +481,4 @@
     .product__price-new {
         font-size: 1.6rem;
     }
-
 }
