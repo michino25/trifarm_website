@@ -8,8 +8,6 @@ Trifarm không chỉ cung cấp những sản phẩm nông sản chất lượng
 
 Nếu bạn muốn trải nghiệm Trifarm ngay hôm nay, bạn có thể truy cập vào link webiste: trifarm.x10.mx hoặc tải app Trifarm trên Google Play. Hãy cùng Trifarm mang lại những bữa ăn ngon miệng và lành mạnh cho bạn và gia đình bạn!
 
-[![img](https://i.imgur.com/SiGmNUt.png)](https://trifarm.x10.mx/)
-
 <p align="center">
     <img src="https://i.imgur.com/SiGmNUt.png" alt="TriFarm Poster" >
 </p>
