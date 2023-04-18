@@ -25,13 +25,13 @@
 
             <div class="header__logo  offset-3 col-3  offset-md-0 col-md-2  col-lg-1-5">
                 <a href="<?php echo $index ?>" class="header__logo-link">
-                    <img class="header__logo-img" src="<?php echo $imglink['trifarm']; ?>" alt="TriFarm">
+                    <img class="header__logo-img" src="<?php echo $imglink['trifarm-white']; ?>" alt="TriFarm">
                 </a>
             </div>
 
             <input type="checkbox" hidden id="header__search-control">
             <label for="header__search-control" class="header__search-panel d-md-none"></label>
-            <div class="header__search  d-none  d-md-flex  offset-lg-0-5 col-lg-7">
+            <div class="header__search  d-none  d-md-flex  offset-lg-0-75 col-lg-6">
 
                 <div class="search__input-wraper">
                     <input class="search__input" placeholder="Tìm sản phẩm, danh mục hay thương hiệu mong muốn ..." type="text">
@@ -42,7 +42,7 @@
                 </button>
             </div>
 
-            <div class="header__account  d-none d-lg-flex col-lg-2">
+            <div class="header__account  d-none d-lg-flex offset-lg-0-25 col-lg-2">
                 <div class="header__account-wrapper">
                     <svg class="account__avt" viewBox="0 0 24 24">
                         <path fill="none" d="M0 0h24v24H0z" />
@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="header__cart  offset-1 col-2  offset-md-0-25 col-md-0-75  offset-lg-0 col-lg-1  d-flex justify-md-center">
+            <div class="header__cart  offset-1 col-2  offset-md-0-25 col-md-0-75  offset-lg-0 col-lg-1-5  d-flex justify-md-center">
                 <a href='<?php echo $index ?>/checkout/cart' class="cursor-hover header__cart-wrap">
                     <div class="cart__icon" style="background: center / contain no-repeat url(<?php echo $imglink['cart']; ?>);" alt="">
                         <span class="cart__number"><?php echo count($cart); ?></span>

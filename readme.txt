@@ -27,8 +27,6 @@ main
     
 folder chỉ chứa file php, các file khác lưu trữ trong thư mục assets
 
-bảng user đăng nhập: làm sau
-
 đổi đường dẫn chính (đổi cổng xampp) controlers/controler.php 
     public $index = 'http://localhost/trifarm-anpha-version';
 
