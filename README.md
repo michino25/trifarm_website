@@ -6,8 +6,8 @@ TriFarm là một nền tảng thương mại điện tử chuyên về nông s�
 
 TriFarm không chỉ cung cấp những sản phẩm nông sản chất lượng cao, mà còn mang lại sự tiện lợi cho khách hàng với giao diện trang web thân thiện và dễ sử dụng. Bạn có thể dễ dàng tìm kiếm, so sánh và đặt hàng các sản phẩm mong muốn chỉ với vài cú nhấp chuột. TriFarm cũng có hỗ trợ khách hàng 24/7 qua điện thoại, email hoặc chat trực tuyến. Ngoài ra, TriFarm còn có chính sách giao hàng nhanh chóng và miễn phí cho các đơn hàng từ 200.000 đồng trở lên.
 
-Nếu bạn muốn trải nghiệm TriFarm ngay hôm nay, bạn có thể truy cập vào link webiste: trifarm.x10.mx hoặc tải app TriFarm trên Google Play. Hãy cùng TriFarm mang lại những bữa ăn ngon miệng và lành mạnh cho bạn và gia đình bạn!
+Nếu bạn muốn trải nghiệm TriFarm ngay hôm nay, bạn có thể truy cập vào link webiste: https://trifarm.x10.mx/ hoặc tải app TriFarm trên Google Play. Hãy cùng TriFarm mang lại những bữa ăn ngon miệng và lành mạnh cho bạn và gia đình bạn!
 
-<p align="center"><a href="trifarm.x10.mx" >
+<p align="center"><a href="https://trifarm.x10.mx/" >
     <img src="https://i.imgur.com/SiGmNUt.png" alt="TriFarm Poster" >
 </a></p>
