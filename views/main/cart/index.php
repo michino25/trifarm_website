@@ -28,7 +28,7 @@
                         <a class="product__ship-change" href="#">Đổi địa chỉ</a>
                     </div>
                     <div class="product__ship-time-price">
-                        <img class="product__ship-img" src="<?php echo $imglink['best-express']; ?>">
+                        <img class="product__ship-img" src="<?php echo $imglink['jnt-express']; ?>">
                         <div class="product__ship-info">
                             <span class="product__ship-time">Ngày mai, trước 9:00</span>
                             <span class="product__ship-price">
