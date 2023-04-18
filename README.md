@@ -10,6 +10,6 @@ Nếu bạn muốn trải nghiệm Trifarm ngay hôm nay, bạn có thể truy c
 
 [![img](https://i.imgur.com/SiGmNUt.png)](https://trifarm.x10.mx/)
 
-<div style="display: flex; justify-content: center;">
+<p align="center">
     <img src="https://i.imgur.com/SiGmNUt.png" alt="TriFarm Poster" >
-</div>
+</p>
