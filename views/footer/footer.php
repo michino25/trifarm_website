@@ -33,9 +33,6 @@
                         <a href="" class="footer-item__link">Giới thiệu TriFarm</a>
                     </li>
                     <li class="footer-item">
-                        <a href="" class="footer-item__link">Quy chế hoạt động Sàn GDTMĐT</a>
-                    </li>
-                    <li class="footer-item">
                         <a href="" class="footer-item__link">Tuyển dụng</a>
                     </li>
                     <li class="footer-item">
@@ -47,6 +44,24 @@
                     <li class="footer-item">
                         <a href="" class="footer-item__link">Chính sách đổi trả</a>
                     </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Quy chế hoạt động Sàn GDTMĐT</a>
+                    </li>
+
+                    <!-- Nút bấm đăng ký shop -->
+                    <!-- <?php
+                            // Kênh người bán
+                            if (isset($_SESSION['account']))
+                                if ($_SESSION['account']['role'] == 'user')
+                                    echo
+                                    '<li class="footer-item">
+                                <form action="" method="post" class="footer-item__link">
+                                    <input type="hidden" name="id" value="' . $_SESSION['account']['id'] . '">
+                                    <input type="submit" class="footer-item__shop" value="Bán hàng cùng Trifarm">
+                                </form>
+                            </li>';
+                            ?> -->
+
                 </ul>
             </div>
 
@@ -206,3 +221,16 @@
         </div>
     </div>
 </div>
+
+
+<?php
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+    $query = "update tb_user set role='shop' where id='$id'";
+    executeQuery($query);
+    $message = "Vui lòng đăng nhập lại để cập nhật chức năng nhà bán hàng.";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    // header("Location: " . $index . "/login/signout");
+}
+
+?>

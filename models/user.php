@@ -6,6 +6,7 @@ class Category
     private $password;
     private $fullname;
     private $note;
+    private $role;
 
     public function getId()
     {
@@ -26,18 +27,17 @@ class Category
         return $this->fullname;
     }
 
-    public function getNote()
+    public function getRole()
     {
-        return $this->note;
+        return $this->role;
     }
 
-    public function __construct($id, $username, $password, $fullname, $note)
+    public function __construct($id, $username, $fullname)
     {
         $this->id = $id;
         $this->username = $username;
-        $this->password = $password;
         $this->fullname = $fullname;
-        $this->note = $note;
+        $this->role = $role;
     }
 
     public function __toString()

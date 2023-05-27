@@ -11,7 +11,7 @@
             <a href="#" class="news card">
                 <img src="<?php echo $imglink['news-evfta']; ?>" class="news__img">
                 <div class="news__body">
-                    <h5 class="news__title">Nhiều nông sản xuất khẩu tận dụng tốt EVFTA</h5>
+                    <h5 class="news__title" id="home_myshop_fix">Nhiều nông sản xuất khẩu tận dụng tốt EVFTA</h5>
                     <p class="news__brief">Theo Bộ Công thương, trong 6 tháng đầu năm 2022, kim ngạch xuất khẩu
                         của VN vào thị trường EU đạt gần 24 tỉ USD, tăng 22,6% so với năm 2021</p>
                 </div>

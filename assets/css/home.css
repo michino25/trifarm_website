@@ -423,6 +423,65 @@
     text-align: center;
 }
 
+/* =============================================== shop =============================================== */
+
+.shop-btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.shop-btn-group .shop-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: var(--bs-gray-200) 1px solid;
+    border-radius: 16px;
+    padding: 4% 20px;
+    /* font-size: 16px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    margin: 12px 12px;
+    width: 22%;
+}
+
+.shop-btn-group .shop-btn:hover {
+    background-color: rgba(var(--primary-code), 2%);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+    border: rgba(var(--primary-code), 30%) 1px solid;
+}
+
+.shop-btn-group .shop-btn i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    /* padding: 16px; */
+    width: 48px;
+    height: 48px;
+    color: var(--primary-color);
+    border-radius: 50%;
+    background-color: rgba(var(--primary-code), 20%);
+}
+
+.shop-btn-group .shop-btn p {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.shop-btn-group .shop-btn span {
+    margin-top: 4px;
+    font-size: 1.3rem;
+}
+
+/* =============================================== media query =============================================== */
+
 @media (max-width: 991px) {
     .banner_bg-img-left,
     .banner_bg-img-right {

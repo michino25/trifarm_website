@@ -33,6 +33,16 @@
     font-size: 1.2rem;
     color: #737373;
     padding: 4px 0;
+    cursor: pointer;
+}
+
+.footer-item__link .footer-item__shop {
+    padding: 2px 0;
+    margin: unset;
+    background-color: unset;
+    border: none;
+    outline: none;
+    color: unset;
 }
 
 .footer-item__link:hover {

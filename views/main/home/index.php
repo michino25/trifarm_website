@@ -17,6 +17,10 @@ require_once "recommend.php";
 // Tin tức
 require_once "news.php";
 
+// Kênh người bán
+if (isset($_SESSION['account']) && $_SESSION['account']['role'] == 'shop')
+    require_once "myshop.php";
+
 ?>
 
 <script src="<?php echo $index ?>/assets/js/formatPrice.js"></script>

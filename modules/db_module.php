@@ -18,7 +18,8 @@ function dispose($link)
 	}
 }
 
-function executeQuery($q) {
+function executeQuery($q)
+{
 	$link = NULL;
 	connect($link);
 	mysqli_set_charset($link, "utf8");

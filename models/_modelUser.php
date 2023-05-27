@@ -4,16 +4,6 @@ require_once "modules/db_module.php";
 
 class ModelUser
 {
-    public function getCategoryList()
-    {
-        $result = executeQuery("SELECT * FROM tb_category");
-        $data = array();
-        while ($rows = mysqli_fetch_assoc($result)) {
-            $category = new Category($rows["id"], $rows["name"], $rows["img"]);
-            array_push($data, $category);
-        }
-        return $data;
-    }
 
     function SignUp($username, $password, $fullname)
     {
@@ -22,7 +12,8 @@ class ModelUser
             '" . stringSQL($username) . "',
             '" . md5($password) . "',
             '" . stringSQL($fullname) . "',
-            '" . $password . "'
+            '" . stringSQL($password) . "',
+            '" . stringSQL("user") . "'
             )"
         );
     }
@@ -40,6 +31,7 @@ class ModelUser
                 "id" => $row[0],
                 "username" => $row[1],
                 "fullname" => $row[3],
+                "role" => $row[5],
             );
             $_SESSION['account'] = $account;
             return true;

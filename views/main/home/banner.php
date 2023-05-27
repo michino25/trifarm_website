@@ -44,10 +44,22 @@
             </div>
 
             <div class="group-item-banner d-none d-lg-flex">
-                <a href="#" class="item-banner ">
-                    <img src="<?php echo $imglink['van']; ?>" alt="" class="icon-item-banner">
-                    <h6 class="text-item-banner">Giao ngay 1h</h6>
-                </a>
+
+                <?php
+                // Kênh người bán
+                if (isset($_SESSION['account']) && $_SESSION['account']['role'] == 'shop')
+                    echo
+                    '<a href="#home_myshop_fix" class="item-banner ">
+                            <img src="' . $imglink['shop'] . '" alt="" class="icon-item-banner">
+                            <h6 class="text-item-banner">Kênh shop</h6>
+                        </a>';
+                else
+                    echo
+                    '<a href="#" class="item-banner ">
+                            <img src="' . $imglink['van'] . '" alt="" class="icon-item-banner">
+                            <h6 class="text-item-banner">Giao ngay 1h</h6>
+                        </a>';
+                ?>
 
                 <a href="#" class="item-banner ">
                     <img src="<?php echo $imglink['membership']; ?>" alt="" class="icon-item-banner">
@@ -64,10 +76,11 @@
                     <h6 class="text-item-banner">Vào bếp</h6>
                 </a>
 
-                <a href="#" class="item-banner ">
+                <!-- Tạm bỏ Mã giảm giá -->
+                <!-- <a href="#" class="item-banner ">
                     <img src="<?php echo $imglink['coupon']; ?>" alt="" class="icon-item-banner">
                     <h6 class="text-item-banner">Mã giảm giá</h6>
-                </a>
+                </a> -->
 
                 <a href="#" class="item-banner ">
                     <img src="<?php echo $imglink['newspaper']; ?>" alt="" class="icon-item-banner">
