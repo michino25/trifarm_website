@@ -66,10 +66,23 @@
                 </div>
 
                 <div class="checkout-action">
-                    <button <?php echo count($cart) == 0 ? "disabled" : ""; ?> class="checkout-btn">Đặt Hàng</button>
+                    <!-- <button <?php echo count($cart) == 0 ? "disabled" : ""; ?> class="checkout-btn">Đặt Hàng</button> -->
+                    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="#">
+
+                        <input type="submit" name="momo" value="momo" class="checkout-btn">
+                    </form>
                     <a href="<?php echo $index; ?>" class="home-btn">Tiếp tục mua sắm</a>
                 </div>
-
+                <?php
+                $filepath = realpath(dirname(__FILE__));
+                if (isset($_POST['momo'])) {
+                    include_once($filepath . "/../../../controllers/checkout.php");
+                    $checkout = new checkout();
+                    $checkout->paymentMomo();
+                } else {
+                    echo "12121111111111111111111111111";
+                }
+                ?>
             </div>
         </div>
     </div>

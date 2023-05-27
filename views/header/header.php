@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="<?php echo $index ?>/assets/css/header.css">
 <link rel="stylesheet" href="<?php echo $index ?>/assets/css/login.css">
+<?php
+ob_start();
+?>
+
 <script>
     $.fn.enterKey = function(fnc) {
         return this.each(function() {
