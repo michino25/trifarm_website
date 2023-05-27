@@ -116,7 +116,7 @@
 }
 
 .product__quantity-input:focus-visible {
-    outline: none
+    outline: none;
 }
 
 .product__quantity-decrease,
@@ -150,8 +150,8 @@ input[type="number"] {
     appearance: textfield;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
@@ -293,6 +293,8 @@ input[type=number]::-webkit-outer-spin-button {
     background: var(--primary-dark-color);
     border-radius: 12px;
     border: none;
+    width: 100%;
+    outline: none;
     padding: 12px 0;
     font-weight: 500;
 }
@@ -313,6 +315,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
     text-decoration: none;
     color: #333;
+    outline: none;
     border: 1px solid #e7e7e7;
     border-radius: 12px;
     font-weight: 500;
@@ -370,7 +373,7 @@ input[type=number]::-webkit-outer-spin-button {
         margin-bottom: 36px;
         overflow: hidden;
     }
-    
+
     .cart-no-item svg {
         width: 150%;
     }
@@ -378,5 +381,4 @@ input[type=number]::-webkit-outer-spin-button {
         text-align: center;
         width: 180px;
     }
-    
 }
