@@ -41,41 +41,24 @@
 </div>
 
 <script>
-    var signInClick = function() {
+    async function signInClick() {
         var username = $(".signin input[name='username']").val();
         var password = $(".signin input[name='password']").val();
 
-        var paramsArr = {
-            username,
-            password,
-        };
+        var params = new URLSearchParams({
+            username: username,
+            password: password,
+        }).toString();
 
-        // Turn the data object into an array of URL-encoded key/value pairs.
-        let urlEncodedData = "",
-            urlEncodedDataPairs = [],
-            name;
-        for (name in paramsArr) {
-            urlEncodedDataPairs.push(name + '=' + encodeURIComponent(paramsArr[name]));
-        }
-
-        var http = new XMLHttpRequest();
         var url = '<?php echo $index ?>/login/signin';
-        var params = urlEncodedDataPairs.join('&');
-        http.open('POST', url, true);
 
-        //Send the proper header information along with the request
-        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        var responseText = await ajaxQuery("POST", url, params);
 
-        http.onreadystatechange = function() { //Call a function when the state changes.
-            if (http.readyState == 4 && http.status == 200) {
-                if (http.responseText.includes("thành công")) {
-                    alert(http.responseText);
-                    window.location.href = '<?php echo $index; ?>'
-                } else
-                    alert(http.responseText);
-            }
-        }
-        http.send(params);
+        if (responseText.includes("thành công")) {
+            alert(responseText);
+            window.location.href = '<?php echo $index; ?>'
+        } else
+            alert(responseText);
     }
 
     $('.btnSignIn').click(signInClick);

@@ -74,78 +74,53 @@
 </div>
 
 <script>
-    function captchaRefresh() {
-        var http = new XMLHttpRequest();
+    async function captchaRefresh() {
         var url = '<?php echo $index ?>/login/createCaptcha';
         var params = '';
-        http.open('GET', url, false);
 
-        //Send the proper header information along with the request
-        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        var responseText = await ajaxQuery("GET", url, params);
 
-        http.onreadystatechange = function() { //Call a function when the state changes.
-            if (http.readyState == 4 && http.status == 200) {
-                $('img.img_captcha').attr("src", http.responseText);
-                $(".signup input[name='captcha']").val('');
-            }
-        }
-        http.send(params);
+        $('img.img_captcha').attr("src", responseText);
+        $(".signup input[name='captcha']").val('');
     }
 
-    var inputRefresh = function() {
+    function inputRefresh() {
         $(".signup input*[name='fullname']").val('');
         $(".signup input[name='username']").val('');
         $(".signup input[name='password']").val('');
         $(".signup input[name='repassword']").val('');
     }
 
-    var signUpClick = function(e) {
-        var fullname = $(".signup input*[name='fullname']").val();
+    async function signUpClick(e) {
+        var fullname = $(".signup input[name='fullname']").val();
         var username = $(".signup input[name='username']").val();
         var password = $(".signup input[name='password']").val();
         var repassword = $(".signup input[name='repassword']").val();
         var captcha = $(".signup input[name='captcha']").val();
 
-        var paramsArr = {
-            fullname,
-            username,
-            password,
-            repassword,
-            captcha
-        };
+        var params = new URLSearchParams({
+            fullname: fullname,
+            username: username,
+            password: password,
+            repassword: repassword,
+            captcha: captcha
+        }).toString();
 
-        // Turn the data object into an array of URL-encoded key/value pairs.
-        let urlEncodedData = "",
-            urlEncodedDataPairs = [],
-            name;
-        for (name in paramsArr) {
-            urlEncodedDataPairs.push(name + '=' + encodeURIComponent(paramsArr[name]));
-        }
-
-        var http = new XMLHttpRequest();
         var url = '<?php echo $index ?>/login/signup';
-        var params = urlEncodedDataPairs.join('&');
-        http.open('POST', url, true);
 
-        //Send the proper header information along with the request
-        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        var responseText = await ajaxQuery("POST", url, params);
 
-        http.onreadystatechange = function() { //Call a function when the state changes.
-            if (http.readyState == 4 && http.status == 200) {
-                if (http.responseText.includes("thành công")) {
-                    alert(http.responseText);
-                    captchaRefresh();
-                    inputRefresh();
-                    // chuyển sang model đăng nhập    
-                    modalSignIn.style.display = "block";
-                    modalSignUp.style.display = "none";
-                } else {
-                    captchaRefresh();
-                    alert(http.responseText);
-                }
-            }
+        if (responseText.includes("thành công")) {
+            alert(responseText);
+            captchaRefresh();
+            inputRefresh();
+            // chuyển sang model đăng nhập    
+            modalSignIn.style.display = "block";
+            modalSignUp.style.display = "none";
+        } else {
+            captchaRefresh();
+            alert(responseText);
         }
-        http.send(params);
     }
 
     $('.btnSignUp').click(signUpClick);

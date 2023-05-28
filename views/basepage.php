@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="<?php echo $index ?>/assets/fonts/remixicon_fonts/remixicon.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
+    <script src="<?php echo $index ?>/assets/js/utilities.js"></script>
+
     <link rel="stylesheet" href="<?php echo $index ?>/assets/css/base.css">
     <link rel="stylesheet" href="<?php echo $index ?>/assets/css/bootstrap.css">
 

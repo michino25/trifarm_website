@@ -48,21 +48,19 @@
     var recommend_page = 1;
 
     // ajax
-    $('.content__container-see-more').click(function(e) {
+    $('.content__container-see-more').click(async function(e) {
+
         recommend_page++;
 
         // điều kiện chặn ajax vì có ít sản phẩm (chỉ có 13 trang - 18/230 sản phẩm)
         if (recommend_page > 14)
             return;
 
-        var _this = this;
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                $(_this).parent().find(".row").append(this.responseText);
-            };
-        };
-        xmlhttp.open("GET", "<?php echo $index ?>/home/load_recommend/page=" + recommend_page, true);
-        xmlhttp.send();
+        var url = '<?php echo $index ?>/home/load_recommend/page=' + recommend_page;
+        var params = '';
+        var responseText = await ajaxQuery("GET", url, params);
+
+        $(this).parent().find(".row").append(responseText);
+
     });
 </script>

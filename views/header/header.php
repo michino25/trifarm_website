@@ -187,6 +187,7 @@ ob_start();
 </div>
 
 <script src="<?php echo $index ?>/assets/js/login.js"></script>
+
 <script>
     function searchHandler() {
         if ($('.search__input').val().trim() != "" && $('.search__input').val().trim() != " ") {
