@@ -77,14 +77,16 @@ class checkout
             header("Location: index.php");
     }
 
-    public function momopayment()
+    public function momopayment($data)
     {
         if (isset($_POST['momo'])) {
+
+            $index = $data['index'];
 
             // Phần tùy chỉnh
             $orderInfo = "Thanh toán đơn hàng Trifarm";
             $total = $_POST['total'];
-            $redirectUrl = "https://trifarm.x10.mx/";
+            $redirectUrl = $index;
             $ipnUrl = $redirectUrl;
 
             $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";

@@ -47,27 +47,27 @@
                         <span class="cart-heading-2"><?php echo number_format($total, 0, '', '.'); ?> đ</span>
                     </div>
                     <div class="checkout-box">
-                        <span class="cart-heading-3">Giảm giá</span>
-                        <span class="cart-heading-3">(5%) -<?php echo number_format($total / 20, 0, '', '.'); ?> đ</span>
-                    </div>
-                    <div class="checkout-box">
                         <span class="cart-heading-3">Phí vận chuyển</span>
-                        <span class="cart-heading-3">0 đ</span>
+                        <span class="cart-heading-3">14.000 đ</span>
                     </div>
                     <div class="checkout-box">
-                        <span class="cart-heading-3">Thuế VAT</span>
-                        <span class="cart-heading-3">(10%) +<?php echo number_format($total * 0.95 * 0.1, 0, '', '.'); ?> đ</span>
+                        <span class="cart-heading-3">Giảm giá phí vận chuyển</span>
+                        <span class="cart-heading-3">-14.000 đ</span>
+                    </div>
+                    <div class="checkout-box">
+                        <span class="cart-heading-3">Voucher từ Trifarm</span>
+                        <span class="cart-heading-3">(10%) -<?php echo number_format($total / 10, 0, '', '.'); ?> đ</span>
                     </div>
                     <div class="separate"></div>
                     <div class="checkout-box">
                         <span class="cart-heading-2">Tổng Thanh Toán</span>
-                        <span class="cart-heading-2"><?php echo number_format($total * 0.95 * 1.1, 0, '', '.'); ?> đ</span>
+                        <span class="cart-heading-2"><?php echo number_format($total * 0.9, 0, '', '.'); ?> đ</span>
                     </div>
                 </div>
 
                 <div class="checkout-action">
                     <form class="" method="POST" target="_blank" action='<?php echo $index; ?>/checkout/momopayment'>
-                        <input hidden name="total" value="<?php echo ($total * 0.95 * 1.1); ?>" />
+                        <input hidden name="total" value="<?php echo ($total * 0.9); ?>" />
                         <input <?php echo count($cart) == 0 ? "disabled" : ""; ?> type="submit" name="momo" value="Thanh toán" class="checkout-btn">
                     </form>
                     <a href="<?php echo $index; ?>" class="home-btn">Tiếp tục mua sắm</a>

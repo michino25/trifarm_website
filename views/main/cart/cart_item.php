@@ -1,6 +1,7 @@
 <div class='product-wrapper'>
     <div class='product-img-wrapper  col-3  col-lg-3  col-xl-2'>
-        <img class='product-img' src='<?php echo $product->getImg(); ?>' />
+        <div class="product-img" style="background: center / contain no-repeat url(<?php echo $product->getImg(); ?>);">
+        </div>
     </div>
 
     <div class='product-info-quantity col-8 col-md-7 col-xl-8 row'>
