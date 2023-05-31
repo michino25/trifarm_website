@@ -1,2 +1,2 @@
 <?php
-require 'config_epizy.php';
+require 'config_x10hosting.php';

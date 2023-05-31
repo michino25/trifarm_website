@@ -25,26 +25,28 @@ class Controller
             "index" => $this->getURL(1)
         ]];
 
-        // url handler
+        // Xử lý URL
         if (isset($_GET["url"])) {
             $urlString = trim($_GET["url"]);
             $urlString = filter_var($urlString, FILTER_SANITIZE_URL);
 
-            $temp = explode("/", $urlString);
-            $page = $temp[0];
-            array_push($url, $page);
+            $urlParts = explode("/", $urlString);
+            $page = $urlParts[0];
+            $url[] = $page;
 
-            if (isset($temp[1])) {
-                $method = $temp[1];
-                array_push($url, $method);
+            if (isset($urlParts[1])) {
+                $method = $urlParts[1];
+                $url[] = $method;
             }
 
-            if (isset($temp[2])) {
-                $param = $temp[2];
-                array_push($url, $param);
+            if (isset($urlParts[2])) {
+                $param = $urlParts[2];
+                $url[] = $param;
             }
-        } else
+        } else {
+            // Nếu không có URL, chuyển hướng đến một vị trí cụ thể
             header('Location: ' . $this->params[0]['index'] . '/home');
+        }
 
 
         // ngoại lệ url
