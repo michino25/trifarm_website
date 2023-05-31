@@ -5,12 +5,15 @@ class ModelCart
 {
     function modifyCookie($name, $value)
     {
+        // $index = https://trifarm.epizy.com
+        $host = parse_url($index, PHP_URL_HOST); // get trifarm.epizy.com
+
         // setcookie($name, '', time() - 1);
-        setcookie($name, '', time() - 1, '/', '.x10.mx', false);
-        setcookie($name, $value, time() + 86400, '/home', '.x10.mx', false);
-        setcookie($name, $value, time() + 86400, '/detail', '.x10.mx', false);
-        setcookie($name, $value, time() + 86400, '/search', '.x10.mx', false);
-        setcookie($name, $value, time() + 86400, '/checkout', '.x10.mx', false);
+        setcookie($name, '', time() - 1, '/', $host, false);
+        setcookie($name, $value, time() + 86400, '/home', $host, false);
+        setcookie($name, $value, time() + 86400, '/detail', $host, false);
+        setcookie($name, $value, time() + 86400, '/search', $host, false);
+        setcookie($name, $value, time() + 86400, '/checkout', $host, false);
 
         return;
     }
