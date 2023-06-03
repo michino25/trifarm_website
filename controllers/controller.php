@@ -53,40 +53,63 @@ class Controller
         if ($url[0] == 'home' && !isset($url[1]))
             $url = ['home', 'index'];
 
-        // xử lý ngoại lệ url khi là API
-        if ($url[0] == 'api' || $url[0] == 'test') {
-            if ($url[0] == 'api') {
-                $this->controller = $url[0];
-                require_once "./controllers/" . $this->controller . ".php";
-                $this->controller = new $this->controller;
+        // Gọi các controller tương ứng 
+        switch ($url[0]) {
+            case 'api': {
+                    $this->controller = $url[0];
+                    require_once "./controllers/" . $this->controller . ".php";
+                    $this->controller = new $this->controller;
 
-                $this->method = $url[1];
-                $this->params = [
-                    'endpoint' => $url[2]
-                ];
-                call_user_func_array([$this->controller, $this->method], [$this->params]);
-            }
+                    $this->method = $url[1];
+                    $this->params = [
+                        'endpoint' => $url[2]
+                    ];
+                    call_user_func_array([$this->controller, $this->method], [$this->params]);
+                }
+                break;
+            case 'test': {
+                    $this->controller = $url[0];
+                    require_once "./controllers/" . $this->controller . ".php";
+                    $this->controller = new $this->controller;
 
-            if ($url[0] == 'test') {
-                $this->controller = $url[0];
-                require_once "./controllers/" . $this->controller . ".php";
-                $this->controller = new $this->controller;
+                    $this->method = $url[1];
+                    $this->params = '';
+                    call_user_func_array([$this->controller, $this->method], [$this->params]);
+                }
+                break;
+            case 'admin': {
 
-                $this->method = $url[1];
-                $this->params = '';
-                call_user_func_array([$this->controller, $this->method], [$this->params]);
-            }
-        } else
-            // xử lý controller không tìm thấy trang + gọi hàm kiểm tra url
-            if (!$this->checkValidController($url)) {
-                $imglink = $this->params[0]['imgLink'];
-                $index = $this->getURL(1);
-                $error_log = "controller - error url";
-                include "views/notfound/notfound.php";
-            } else {
-                // gọi hàm dẫn đến controller phụ (home, detail, search) 
-                call_user_func_array([$this->controller, $this->method], $this->params);
-            }
+                    // Kênh người bán
+                    if (isset($_SESSION['account']) && $_SESSION['account']['role'] == 'shop') {
+                        $this->controller = $url[0];
+                        require_once "./controllers/" . $this->controller . ".php";
+                        $this->controller = new $this->controller;
+
+                        $this->method = 'default';
+                        $this->params = [
+                            'endpoint' => $url[1],
+                            "index" => $this->getURL(1)
+                        ];
+
+                        call_user_func_array([$this->controller, $this->method], [$this->params]);
+                    } else {         // Nếu không có URL, chuyển hướng đến một vị trí cụ thể
+                        header('Location: ' . $this->params[0]['index'] . '/home');
+                    }
+                }
+                break;
+            default: {
+                    // xử lý controller không tìm thấy trang + gọi hàm kiểm tra url
+                    if (!$this->checkValidController($url)) {
+                        $imglink = $this->params[0]['imgLink'];
+                        $index = $this->getURL(1);
+                        $error_log = "controller - error url";
+                        include "views/notfound/notfound.php";
+                    } else {
+                        // gọi hàm dẫn đến controller phụ (home, detail, search) 
+                        call_user_func_array([$this->controller, $this->method], $this->params);
+                    }
+                }
+        }
     }
 
     // kiểm tra url có hướng đến controller nào không

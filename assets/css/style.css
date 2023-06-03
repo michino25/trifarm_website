@@ -1,0 +1,89 @@
+.nav-item .menu-title {
+    color: #484848;
+}
+
+.nav-item:hover .menu-title {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.misc-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - (1.625rem * 2));
+    text-align: center;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: var(--primary-dark-color);
+    color: #fff;
+}
+
+.form-control {
+    height: unset;
+}
+
+.select2-container--default .select2-selection--single:focus,
+.form-control:focus {
+    border-color: var(--primary-light-color);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.select2-selection__arrow {
+    display: none;
+}
+
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered {
+    line-height: 1.4rem;
+}
+
+.tt-menu {
+    background-color: white;
+}
+
+.file-upload-browse {
+    height: -webkit-fill-available;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary.active {
+    color: #fff;
+    background-color: var(--primary-dark-color);
+    border-color: var(--primary-dark-color);
+}
+
+.table td .badge {
+    min-width: 50%;
+}
+
+.table tr {
+    height: 72px;
+}
+
+tr .table-action {
+    display: none;
+    height: 72px;
+    position: absolute;
+    right: 1.5rem;
+}
+
+tr:hover .table-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+tr .table-action .btn {
+    padding: 0.6rem 1rem;
+    margin-right: 0.8rem;
+}
