@@ -54,16 +54,28 @@ class Controller
             $url = ['home', 'index'];
 
         // xử lý ngoại lệ url khi là API
-        if ($url[0] == 'api') {
-            $this->controller = $url[0];
-            require_once "./controllers/" . $this->controller . ".php";
-            $this->controller = new $this->controller;
+        if ($url[0] == 'api' || $url[0] == 'test') {
+            if ($url[0] == 'api') {
+                $this->controller = $url[0];
+                require_once "./controllers/" . $this->controller . ".php";
+                $this->controller = new $this->controller;
 
-            $this->method = $url[1];
-            $this->params = [
-                'endpoint' => $url[2]
-            ];
-            call_user_func_array([$this->controller, $this->method], [$this->params]);
+                $this->method = $url[1];
+                $this->params = [
+                    'endpoint' => $url[2]
+                ];
+                call_user_func_array([$this->controller, $this->method], [$this->params]);
+            }
+
+            if ($url[0] == 'test') {
+                $this->controller = $url[0];
+                require_once "./controllers/" . $this->controller . ".php";
+                $this->controller = new $this->controller;
+
+                $this->method = $url[1];
+                $this->params = '';
+                call_user_func_array([$this->controller, $this->method], [$this->params]);
+            }
         } else
             // xử lý controller không tìm thấy trang + gọi hàm kiểm tra url
             if (!$this->checkValidController($url)) {

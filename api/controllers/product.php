@@ -9,6 +9,8 @@ function getData($array, $key, $defaultValue = '')
 
 function echoJson($data)
 {
+    header("Access-Control-Allow-Origin: *");
+
     // Set the response header to JSON
     header('Content-Type: application/json');
 
